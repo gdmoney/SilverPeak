@@ -1,0 +1,27 @@
+Notes
+=====
+- upgrade primary appliance to new code to test
+- Orchestrator loads the new image on the standby partition and makes it active after reboot
+
+
+
+
+Implementation
+==============
+1. Verify circuit health on the router and in PULSE
+
+2. Orchestrator > select device > Administration > Software > Upgrade Appliances
+
+3. Select VXOA image from the list > Install and reboot > Upgrade
+
+4. Wait for reboot to finish; verify router interfaces are up
+
+5. Fail over flows from secondary to primary:
+
+   secondary SPK > Monitoring > Flows > Reset Flows > Reset All
+
+6. Clear alarms:
+
+   Orchestrator > Silver Peak Systems > Monitoring > Summary > Alarms > Active > Select All > Clear
+
+7. Verify circuit health on the router and in PULSE
